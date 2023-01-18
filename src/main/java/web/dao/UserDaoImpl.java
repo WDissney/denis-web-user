@@ -2,14 +2,14 @@ package web.dao;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.User;
 
 import javax.persistence.*;
 import java.util.List;
-@Component
+@Repository
 public class UserDaoImpl implements UserDao{
-
+    @PersistenceContext
     final EntityManager entityManager;
     @Autowired
     public UserDaoImpl(EntityManagerFactory entityManagerFactory) {
@@ -24,35 +24,21 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public void addUser(User user) {
-        entityManager.getTransaction().begin();
         entityManager.persist(user);
-        entityManager.getTransaction().commit();
     }
 
     @Override
     public void removeUser(Long id) {
-        entityManager.getTransaction().begin();
         entityManager.remove(entityManager.find(User.class, id));
-        entityManager.getTransaction().commit();
     }
 
     @Override
     public void updateUser(User user) {
-        try {
-            if (!entityManager.getTransaction().isActive())
-                entityManager.getTransaction().begin();
             entityManager.merge(user);
-            entityManager.getTransaction().commit();
-        } catch (Exception e){
-            if (entityManager.getTransaction().isActive())
-                entityManager.getTransaction().rollback();
-        }
-    }
 
+    }
+    @Override
     public User getUserId(Long id){
-        if(entityManager.getTransaction().isActive())
-            entityManager.getTransaction().rollback();
-        entityManager.getTransaction().begin();
         return entityManager.find(User.class, id);
     }
 }
