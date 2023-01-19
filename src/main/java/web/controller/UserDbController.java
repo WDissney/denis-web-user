@@ -5,24 +5,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
-import web.service.UserServiceImpl;
+import web.service.UserService;
 
 @Controller
-public class UseDbController {
-    final private UserServiceImpl userServiceImpl;
+public class UserDbController {
+    final private UserService userService;
     @Autowired
-    public UseDbController(UserServiceImpl userServiceImpl) {
-        this.userServiceImpl = userServiceImpl;
+    public UserDbController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/")
     public String showUsers (Model model){
-        model.addAttribute("users", userServiceImpl.getAllUsers());
+        model.addAttribute("users", userService.getAllUsers());
         return "usersAll";
     }
     @DeleteMapping("/{id}/deleteUser")
     public String removeUser(@PathVariable("id") Long id){
-        userServiceImpl.removeUser(id);
+        userService.removeUser(id);
         return "redirect:/";
     }
     @GetMapping("/addUser")
@@ -31,18 +31,18 @@ public class UseDbController {
     }
     @PostMapping()
     public String addUserInDB(@ModelAttribute("user") User user){
-        userServiceImpl.addUser(user);
+        userService.addUser(user);
         return "redirect:/";
     }
     @GetMapping("/{id}/edit")
     public String editUser(Model model, @PathVariable("id") Long id){
-        model.addAttribute("user", userServiceImpl.getUserId(id));
+        model.addAttribute("user", userService.getUserId(id));
         return "edit";
     }
 
     @PatchMapping("/updateUser")
     public String update (@ModelAttribute("user") User user){
-        userServiceImpl.updateUser(user);
+        userService.updateUser(user);
         return "redirect:/";
     }
 }

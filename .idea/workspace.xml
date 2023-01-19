@@ -9,15 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86b5cf1c-8657-4ded-a411-f339602195e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="86b5cf1c-8657-4ded-a411-f339602195e7" name="Changes" comment="- entityManager.getTransaction().begin(); используй вохзможности спринг для управления транзакциями &#10;- для дао и для сервиса используй специальные стереотипные аннотации спринга а не просто компонент &#10;- public class UserServiceImpl интерфейс где?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/myConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/myConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/dbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/DbConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/myConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/MyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/myInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/MyInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/UseDbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/controller/UserDbController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/pages/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/pages/edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +33,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -225,8 +218,16 @@
       <workItem from="1673687207433" duration="15402000" />
       <workItem from="1673714581196" duration="7843000" />
       <workItem from="1673787682899" duration="14735000" />
-      <workItem from="1673874524550" duration="7428000" />
+      <workItem from="1673874524550" duration="10972000" />
     </task>
+    <task id="LOCAL-00001" summary="- entityManager.getTransaction().begin(); используй вохзможности спринг для управления транзакциями &#10;- для дао и для сервиса используй специальные стереотипные аннотации спринга а не просто компонент &#10;- public class UserServiceImpl интерфейс где?">
+      <created>1674057386919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674057386919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,5 +243,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- entityManager.getTransaction().begin(); используй вохзможности спринг для управления транзакциями &#10;- для дао и для сервиса используй специальные стереотипные аннотации спринга а не просто компонент &#10;- public class UserServiceImpl интерфейс где?" />
+    <option name="LAST_COMMIT_MESSAGE" value="- entityManager.getTransaction().begin(); используй вохзможности спринг для управления транзакциями &#10;- для дао и для сервиса используй специальные стереотипные аннотации спринга а не просто компонент &#10;- public class UserServiceImpl интерфейс где?" />
   </component>
 </project>

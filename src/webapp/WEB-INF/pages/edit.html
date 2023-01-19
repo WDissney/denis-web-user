@@ -7,16 +7,15 @@
 <body>
 
 <form th:method="PATCH" th:action="@{/updateUser}" th:object="${user}">
-  <label for="name">Enter id: </label>
-  <input type="text" th:field="*{id}" id="id"/>
+  <input type="text" th:field="*{id}" id="id">
   <br/>
-  <label for="name">Enter name: </label>
+  <label for="name">Edit name: </label>
   <input type="text" th:field="*{name}" id="name"/>
   <br/>
-  <label for="lastName"></label>
+  <label for="lastName">Edit lastName:</label>
   <input type="text" th:field="*{lastName}" id="lastName"/>
   <br/>
-  <label for="age"></label>
+  <label for="age">Edit age:</label>
   <input type="number" th:field="*{age}" id="age"/>
   <br/>
   <input type="submit" value="Update!"/>
